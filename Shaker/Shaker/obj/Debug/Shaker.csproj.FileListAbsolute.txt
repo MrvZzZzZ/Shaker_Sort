@@ -1,0 +1,7 @@
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\bin\Debug\Shaker.exe.config
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\bin\Debug\Shaker.exe
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\bin\Debug\Shaker.pdb
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\obj\Debug\Shaker.csproj.AssemblyReference.cache
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\obj\Debug\Shaker.csproj.CoreCompileInputs.cache
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\obj\Debug\Shaker.exe
+C:\Users\Михаил\Documents\Shaker_Sort\Shaker\Shaker\obj\Debug\Shaker.pdb
