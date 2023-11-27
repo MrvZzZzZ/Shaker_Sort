@@ -8,7 +8,7 @@ namespace Shaker
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             const int ConsoleFillCommand = 1;
             const int FileFillCommand = 2;
@@ -26,11 +26,22 @@ namespace Shaker
 
                 switch (userInput)
                 {
+<<<<<<< Updated upstream
                     case ConsoleFillCommand:
                         //
                         break;
                     case FileFillCommand:
                         //
+=======
+                    case (int)MenuCommand.RandomFillCommand:
+                        FillRandom.FillArrayRandom(numbers);
+                        ShakerSort.RunShakerSort(numbers);
+                        break;
+
+                    case (int)MenuCommand.FileFillCommand:
+                        FillFromFile.FillArrayFromFile(numbers);
+                        ShakerSort.RunShakerSort(numbers);
+>>>>>>> Stashed changes
                         break;
                     default:
                         Console.WriteLine("Неверный пункт меню!");
