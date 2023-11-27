@@ -23,9 +23,7 @@ namespace Shaker
                 {
                     if (numbers[i] > numbers[i + 1])
                     {
-                        int temp = numbers[i];
-                        numbers[i] = numbers[i + 1];
-                        numbers[i + 1] = temp;
+                        (numbers[i + 1], numbers[i]) = (numbers[i], numbers[i + 1]);
                         isSwap = true;
                     }
                 }
@@ -42,9 +40,7 @@ namespace Shaker
                 {
                     if (numbers[i] < numbers[i - 1])
                     {
-                        int temp = numbers[i];
-                        numbers[i] = numbers[i - 1];
-                        numbers[i - 1] = temp;
+                        (numbers[i - 1], numbers[i]) = (numbers[i], numbers[i - 1]);
                         isSwap = true;
                     }
                 }

@@ -14,10 +14,10 @@ namespace Shaker
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             List<int> numbers = new List<int>();
-            int userInput = 0;
+            int userInput;
 
             do
             {
