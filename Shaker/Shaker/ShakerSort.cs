@@ -12,7 +12,7 @@ namespace Shaker
         /// Запуск шейкерной сортировки
         /// </summary>
         /// <param name="numbers"></param>
-        public void RunShakerSort(List<int> numbers)
+        public static void RunShakerSort(List<int> numbers)
         {
             bool isSwap = false;
             int rightBoarder = numbers.Count - 1, leftBoarder = 0;
@@ -48,13 +48,6 @@ namespace Shaker
                 leftBoarder++;
             }
             while (leftBoarder < rightBoarder);
-
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                Console.Write(numbers[i] + " ");
-            }
-
-            Console.WriteLine();
         }
     }
 }

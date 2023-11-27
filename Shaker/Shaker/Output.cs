@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 enum SaveMenuComands
-{ 
-    ContinueWithSave = 1,
-    ContinueWithoutSave = 2,
+{
+    ContinueWithCreatFile = 1,
+    ContinueWithoutCreatFile = 2,
 }
 
 namespace Shaker
@@ -18,9 +18,8 @@ namespace Shaker
         /// <summary>
         /// Сохраняет матрицу в файл
         /// </summary>
-        /// <param name="array"> Перенная, хранящая матрицу </param>
-        /// <param name="sizeArray"> Переменная, хранящая размер матрицу </param>
-        static void SaveArray(int[] array, int sizeArray)
+        /// <param name="numbers"> Перенная, хранящая матрицу </param>
+        public static void SaveArray(List<int> numbers)
         {
             StreamWriter file;
             string filename;
@@ -39,7 +38,7 @@ namespace Shaker
                     continue;
                 }
 
-                if (!Utils.IsFileExist(filename))
+                if (Utils.IsFileExist(filename))
                 {
                     int userInput;
                     bool isChoiceMade = false;
@@ -52,19 +51,19 @@ namespace Shaker
                         userInput = int.Parse(Console.ReadLine());
                         switch (userInput)
                         {
-                            case (int)SaveMenuComands.ContinueWithSave:
+                            case (int)SaveMenuComands.ContinueWithCreatFile:
                                 file = File.CreateText(filename);
+
                                 file.Close();
                                 isChoiceMade = true;
                                 break;
 
-                            case (int)SaveMenuComands.ContinueWithoutSave:
+                            case (int)SaveMenuComands.ContinueWithoutCreatFile:
                                 isChoiceMade = true;
                                 break;
 
                             default:
-                                Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.");
-                                Console.WriteLine();
+                                Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.\n");
                                 Console.WriteLine("Нажмите любую клавишу для продолжения...");
                                 Console.ReadKey();
                                 break;
@@ -72,11 +71,10 @@ namespace Shaker
                     }
                     while (!isChoiceMade);
 
-                    if (userInput == (int)SaveMenuComands.ContinueWithoutSave)
+                    if (userInput == (int)SaveMenuComands.ContinueWithoutCreatFile)
                         continue;
                 }
-
-                if (!Utils.IsReadOnly(filename))
+                else if (Utils.IsReadOnly(filename))
                 {
                     Console.WriteLine($"Ошибка: Файл в режиме чтения. Запись невозможна - {filename}");
                     isFileCorrect = false;
@@ -86,12 +84,28 @@ namespace Shaker
 
             file = File.AppendText(filename);
 
-            for (int i = 0; i < sizeArray; i++)
+            for (int i = 0; i < numbers.Count; i++)
             {
-                file.Write(array[i] + " ");
+                file.Write(numbers[i] + " ");
             }
 
+            File.WriteAllText(filename, numbers.ToString());
+
             file.Close();
+        }
+
+        /// <summary>
+        /// Выводит массив чисел
+        /// </summary>
+        /// <param name="numbers"></param>
+        public static void ShowArray(List<int> numbers)
+        {
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+
+            Console.WriteLine();
         }
 
     }

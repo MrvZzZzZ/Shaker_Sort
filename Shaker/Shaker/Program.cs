@@ -30,18 +30,27 @@ namespace Shaker
                 {
                     case (int)MenuCommand.RandomFillCommand:
                         FillRandom.FillArrayRandom(numbers);
+                        Output.ShowArray(numbers);
+                        ShakerSort.RunShakerSort(numbers);
                         break;
 
                     case (int)MenuCommand.FileFillCommand:
                         FillFromFile.FillArrayFromFile(numbers);
+                        Output.ShowArray(numbers);
+                        ShakerSort.RunShakerSort(numbers);
                         break;
 
                     default:
                         Console.WriteLine("Неверный пункт меню!");
                         break;
                 }
+
             }
             while (userInput != (int)MenuCommand.RandomFillCommand && userInput != (int)MenuCommand.FileFillCommand);
+
+            Output.ShowArray(numbers);
+            Output.SaveArray(numbers);
+
         }
     }
 }

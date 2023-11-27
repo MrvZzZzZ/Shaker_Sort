@@ -20,6 +20,8 @@ namespace Shaker
             {
                 numbers.Add(Utils.GenerateRandomNumber(_minRandomNumber, _maxRandomNumber));
             }
+
+
         }
     }
 }
