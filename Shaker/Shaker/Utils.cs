@@ -45,7 +45,7 @@ namespace Shaker
                 userInput = Console.ReadLine();
                 Regex emptyInputPattern = new Regex("(\\s*)");
 
-                if (!emptyInputPattern.IsMatch(userInput))
+                if (emptyInputPattern.IsMatch(userInput) == false) //!
                 {
                     Regex correctSymbolPattern = new Regex("^[а-яА-ЯёЁa-zA-Z0-9/:._ ]+$");
 
@@ -58,7 +58,7 @@ namespace Shaker
                             userInput = userInput.ToLower();
                         }
 
-                        if (!allowedNamesPattern.IsMatch(userInput))
+                        if (allowedNamesPattern.IsMatch(userInput) == false) //!
                         {
                             return userInput;
                         }
