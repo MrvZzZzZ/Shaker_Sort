@@ -5,6 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+enum SaveMenuComands
+{ 
+    ContinueWithSave = 1,
+    ContinueWithoutSave = 2,
+}
 
 namespace Shaker
 {
@@ -19,7 +24,7 @@ namespace Shaker
         {
             StreamWriter file;
             string filename;
-            bool isFileCorrect = true;
+            bool isFileCorrect;
 
             do
             {
@@ -36,7 +41,7 @@ namespace Shaker
 
                 if (!Utils.IsFileExist(filename))
                 {
-                    int userInput = 0;
+                    int userInput;
                     bool isChoiceMade = false;
 
                     do
@@ -45,28 +50,29 @@ namespace Shaker
                         Console.WriteLine("1 - Да.");
                         Console.WriteLine("2 - Нет.");
                         userInput = int.Parse(Console.ReadLine());
+                        switch (userInput)
+                        {
+                            case (int)SaveMenuComands.ContinueWithSave:
+                                file = File.CreateText(filename);
+                                file.Close();
+                                isChoiceMade = true;
+                                break;
 
-                        if (userInput == 1)
-                        {
-                            file = File.CreateText(filename);
-                            file.Close();
-                            isChoiceMade = true;
-                        }
-                        else if (userInput == 2)
-                        {
-                            isChoiceMade = true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.");
-                            Console.WriteLine();
-                            Console.WriteLine("Нажмите любую клавишу для продолжения...");
-                            Console.ReadKey();
+                            case (int)SaveMenuComands.ContinueWithoutSave:
+                                isChoiceMade = true;
+                                break;
+
+                            default:
+                                Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.");
+                                Console.WriteLine();
+                                Console.WriteLine("Нажмите любую клавишу для продолжения...");
+                                Console.ReadKey();
+                                break;
                         }
                     }
                     while (!isChoiceMade);
 
-                    if (userInput == 2)
+                    if (userInput == (int)SaveMenuComands.ContinueWithoutSave)
                         continue;
                 }
 
@@ -88,12 +94,5 @@ namespace Shaker
             file.Close();
         }
 
-        public static void ShowArray(List<int> numbers)
-        {
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                Console.Write(numbers[i] + " ");
-            }
-        }
     }
 }

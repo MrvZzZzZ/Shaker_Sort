@@ -12,7 +12,7 @@ namespace Shaker
         /// Запуск шейкерной сортировки
         /// </summary>
         /// <param name="numbers"></param>
-        public static void RunShakerSort(List<int> numbers)
+        public void RunShakerSort(List<int> numbers)
         {
             bool isSwap = false;
             int rightBoarder = numbers.Count - 1, leftBoarder = 0;
@@ -23,9 +23,7 @@ namespace Shaker
                 {
                     if (numbers[i] > numbers[i + 1])
                     {
-                        int temp = numbers[i];
-                        numbers[i] = numbers[i + 1];
-                        numbers[i + 1] = temp;
+                        (numbers[i + 1], numbers[i]) = (numbers[i], numbers[i + 1]);
                         isSwap = true;
                     }
                 }
@@ -42,9 +40,7 @@ namespace Shaker
                 {
                     if (numbers[i] < numbers[i - 1])
                     {
-                        int temp = numbers[i];
-                        numbers[i] = numbers[i - 1];
-                        numbers[i - 1] = temp;
+                        (numbers[i - 1], numbers[i]) = (numbers[i], numbers[i - 1]);
                         isSwap = true;
                     }
                 }
@@ -53,7 +49,11 @@ namespace Shaker
             }
             while (leftBoarder < rightBoarder);
 
-            Output.ShowArray(numbers);
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+
             Console.WriteLine();
         }
     }

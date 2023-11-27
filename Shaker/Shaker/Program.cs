@@ -17,7 +17,7 @@ namespace Shaker
         static void Main()
         {
             List<int> numbers = new List<int>();
-            int userInput = 0;
+            int userInput;
 
             do
             {
@@ -30,12 +30,10 @@ namespace Shaker
                 {
                     case (int)MenuCommand.RandomFillCommand:
                         FillRandom.FillArrayRandom(numbers);
-                        ShakerSort.RunShakerSort(numbers);
                         break;
 
                     case (int)MenuCommand.FileFillCommand:
                         FillFromFile.FillArrayFromFile(numbers);
-                        ShakerSort.RunShakerSort(numbers);
                         break;
 
                     default:
