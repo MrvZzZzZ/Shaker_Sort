@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 enum MenuCommand
 {
-    RandomFillCommand,
-    FileFillCommand
+    RandomFillCommand = 1,
+    FileFillCommand = 2
 }
 
 namespace Shaker
@@ -22,8 +22,8 @@ namespace Shaker
             do
             {
                 Console.WriteLine("Выберите способ заполнения масисва чисел:" +
-                    $"\n [{MenuCommand.RandomFillCommand}] Заполнение случайными числами от -100 до 100" +
-                    $"\n [{MenuCommand.FileFillCommand}] Заполнение из файла");
+                    $"\n[{(int)MenuCommand.RandomFillCommand}] Заполнение случайными числами от -100 до 100" +
+                    $"\n[{(int)MenuCommand.FileFillCommand}] Заполнение из файла");
                 userInput = Utils.GetNumber();
 
                 switch (userInput)
