@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+<<<<<<< Updated upstream
 enum SaveMenuComands
 { 
     ContinueWithSave = 1,
     ContinueWithoutSave = 2,
 }
+=======
+>>>>>>> Stashed changes
 
 namespace Shaker
 {
@@ -94,5 +97,12 @@ namespace Shaker
             file.Close();
         }
 
+        public static void ShowArray(List<int> numbers)
+        {
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+        }
     }
 }
