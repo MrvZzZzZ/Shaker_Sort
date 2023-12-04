@@ -63,8 +63,7 @@ namespace Shaker
                                 break;
 
                             default:
-                                Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.");
-                                Console.WriteLine();
+                                Console.WriteLine("Ошибка: некорректный ввод! Повторите попытку ввода.\n");
                                 Console.WriteLine("Нажмите любую клавишу для продолжения...");
                                 Console.ReadKey();
                                 break;
