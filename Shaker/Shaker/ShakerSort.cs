@@ -19,6 +19,8 @@ namespace Shaker
 
             do
             {
+                isSwap = false;
+
                 for (int i = leftBoarder; i < rightBoarder; i++)
                 {
                     if (numbers[i] > numbers[i + 1])
@@ -30,11 +32,9 @@ namespace Shaker
 
                 rightBoarder--;
 
-                if (isSwap == true)
-                {
-                    isSwap = false;
-                    continue;
-                }
+                if (!isSwap) break;
+
+                isSwap = false;
 
                 for (int i = rightBoarder; i > leftBoarder; i--)
                 {
@@ -44,6 +44,8 @@ namespace Shaker
                         isSwap = true;
                     }
                 }
+
+                if (!isSwap) break;
 
                 leftBoarder++;
             }
