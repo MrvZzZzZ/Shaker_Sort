@@ -42,8 +42,12 @@ namespace Shaker
                         Console.WriteLine("Неверный пункт меню!");
                         break;
                 }
+
+                Output.ShowArray(numbers);
             }
             while (userInput != (int)MenuCommand.RandomFillCommand && userInput != (int)MenuCommand.FileFillCommand);
+
+            Output.SaveArray(numbers);
         }
     }
 }

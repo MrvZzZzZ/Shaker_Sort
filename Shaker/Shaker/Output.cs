@@ -5,14 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-<<<<<<< Updated upstream
 enum SaveMenuComands
 { 
     ContinueWithSave = 1,
     ContinueWithoutSave = 2,
 }
-=======
->>>>>>> Stashed changes
 
 namespace Shaker
 {
@@ -21,9 +18,9 @@ namespace Shaker
         /// <summary>
         /// Сохраняет матрицу в файл
         /// </summary>
-        /// <param name="array"> Перенная, хранящая матрицу </param>
+        /// <param name="numbers"> Перенная, хранящая матрицу </param>
         /// <param name="sizeArray"> Переменная, хранящая размер матрицу </param>
-        static void SaveArray(int[] array, int sizeArray)
+        static public void SaveArray(List<int> numbers)
         {
             StreamWriter file;
             string filename;
@@ -32,7 +29,7 @@ namespace Shaker
             do
             {
                 isFileCorrect = true;
-                Console.Write("Введите имя файла: ");
+                Console.Write("\nДля сохранения введите путь файла: ");
                 filename = Console.ReadLine();
 
                 if (!Utils.IsValidFilename(filename))
@@ -42,7 +39,7 @@ namespace Shaker
                     continue;
                 }
 
-                if (!Utils.IsFileExist(filename))
+                if (Utils.IsFileExist(filename))
                 {
                     int userInput;
                     bool isChoiceMade = false;
@@ -78,8 +75,7 @@ namespace Shaker
                     if (userInput == (int)SaveMenuComands.ContinueWithoutSave)
                         continue;
                 }
-
-                if (!Utils.IsReadOnly(filename))
+                else if (Utils.IsReadOnly(filename))
                 {
                     Console.WriteLine($"Ошибка: Файл в режиме чтения. Запись невозможна - {filename}");
                     isFileCorrect = false;
@@ -89,10 +85,12 @@ namespace Shaker
 
             file = File.AppendText(filename);
 
-            for (int i = 0; i < sizeArray; i++)
+            for (int i = 0; i < numbers.Count - 1; i++)
             {
-                file.Write(array[i] + " ");
+                file.Write(numbers[i] + " ");
             }
+
+            file.Write(numbers[numbers.Count - 1]);
 
             file.Close();
         }
@@ -103,6 +101,8 @@ namespace Shaker
             {
                 Console.Write(numbers[i] + " ");
             }
+
+            Console.WriteLine();
         }
     }
 }

@@ -48,9 +48,6 @@ namespace Shaker
                 leftBoarder++;
             }
             while (leftBoarder < rightBoarder);
-
-            Output.ShowArray(numbers);
-            Console.WriteLine();
         }
     }
 }

@@ -10,19 +10,21 @@ namespace Shaker
     
     internal class FillFromFile
     {
+        /// <summary>
+        /// Считывает массив из файла
+        /// </summary>
+        /// <param name="numbers"></param>
         public static void FillArrayFromFile(List<int> numbers)
         {
             Console.WriteLine("Введите путь файла: ");
             string filePath = Console.ReadLine();
-            string[] lines = File.ReadAllLines(filePath);
+            string lines = File.ReadAllText($"{filePath}");
 
-            for (int i = 0; i < lines.Length; i++)
+            List<int> numbersToList = lines.Split(' ').Select(Int32.Parse).ToList();
+
+            foreach (int number in numbersToList)
             {
-                int number;
-                if (int.TryParse(lines[i], out number))
-                {
-                    numbers[i] = number;
-                }
+                numbers.Add(number);
             }
         }
     }
