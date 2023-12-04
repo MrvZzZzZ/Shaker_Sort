@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shaker
 {
@@ -13,7 +11,7 @@ namespace Shaker
         /// <summary>
         /// Считывает массив из файла
         /// </summary>
-        /// <param name="numbers"></param>
+        /// <param name="numbers">Массив чисел</param>
         public static void FillArrayFromFile(List<int> numbers)
         {
             Console.WriteLine("Введите путь файла: ");

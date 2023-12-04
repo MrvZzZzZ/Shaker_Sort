@@ -119,6 +119,10 @@ namespace Shaker
             file.Close();
         }
 
+        /// <summary>
+        /// Вывод массива чисел
+        /// </summary>
+        /// <param name="numbers">Массив чисел</param>
         public static void ShowArray(List<int> numbers)
         {
             for (int i = 0; i < numbers.Count; i++)

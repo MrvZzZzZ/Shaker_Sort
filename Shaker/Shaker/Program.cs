@@ -14,6 +14,9 @@ namespace Shaker
 {
     internal class Program
     {
+        /// <summary>
+        /// Функция главного меню
+        /// </summary>
         static void Main()
         {
             List<int> numbers = new List<int>();

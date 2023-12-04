@@ -11,7 +11,7 @@ namespace Shaker
         /// <summary>
         /// Запуск шейкерной сортировки
         /// </summary>
-        /// <param name="numbers"></param>
+        /// <param name="numbers">Массив чисел</param>
         public static void RunShakerSort(List<int> numbers)
         {
             bool isSwap = false;

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shaker
 {
     internal class FillRandom
     {
+        /// <summary>
+        /// Заполнение массива случайными числами
+        /// </summary>
+        /// <param name="numbers">Массив чисел</param>
         public static void FillArrayRandom(List<int> numbers)
         {
             int _minRandomNumber = -100;
