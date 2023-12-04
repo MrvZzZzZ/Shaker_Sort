@@ -29,6 +29,7 @@ namespace Shaker
             do
             {
                 isFileCorrect = true;
+                int userInput;
                 Console.Write("\nДля сохранения введите путь файла: ");
                 filename = Console.ReadLine();
 
@@ -39,9 +40,8 @@ namespace Shaker
                     continue;
                 }
 
-                if (Utils.IsFileExist(filename))
+                if (!Utils.IsFileExist(filename))
                 {
-                    int userInput;
                     bool isChoiceMade = false;
 
                     do
@@ -49,7 +49,8 @@ namespace Shaker
                         Console.WriteLine("Внимание: файла не существует! Желаете создать новый файл с данным именем?");
                         Console.WriteLine("1 - Да.");
                         Console.WriteLine("2 - Нет.");
-                        userInput = int.Parse(Console.ReadLine());
+                        userInput = Utils.GetNumber();
+
                         switch (userInput)
                         {
                             case (int)SaveMenuComands.ContinueWithSave:
@@ -78,6 +79,30 @@ namespace Shaker
                 {
                     Console.WriteLine($"Ошибка: Файл в режиме чтения. Запись невозможна - {filename}");
                     isFileCorrect = false;
+                }
+                else
+                {
+                    Console.WriteLine("Выберите способ записи:\n" +
+                        "[1] Дописать в файл\n" +
+                        "[2] Перезаписить файл");
+                    userInput = Utils.GetNumber();
+
+                    switch (userInput)
+                    {
+                        case 1:
+                            file = File.AppendText(filename);
+                            file.Write(" ");
+                            break;
+
+                        case 2:
+                            file = File.CreateText(filename);
+                            file.Close();
+                            break;
+
+                        default:
+                            break;
+                    }
+
                 }
             }
             while (!isFileCorrect);
