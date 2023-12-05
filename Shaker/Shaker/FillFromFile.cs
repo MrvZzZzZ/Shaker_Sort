@@ -9,9 +9,9 @@ namespace Shaker
     internal class FillFromFile
     {
         /// <summary>
-        /// Считывает массив из файла
+        /// Считывает список из файла
         /// </summary>
-        /// <param name="numbers">Массив чисел</param>
+        /// <param name="numbers">Список чисел</param>
         public static void FillArrayFromFile(List<int> numbers)
         {
             Console.WriteLine("Введите путь файла: ");

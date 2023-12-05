@@ -18,8 +18,7 @@ namespace Shaker
         /// <summary>
         /// Сохраняет матрицу в файл
         /// </summary>
-        /// <param name="numbers"> Перенная, хранящая матрицу </param>
-        /// <param name="sizeArray"> Переменная, хранящая размер матрицу </param>
+        /// <param name="numbers">Список чисел</param>
         static public void SaveArray(List<int> numbers)
         {
             StreamWriter file;
@@ -47,8 +46,8 @@ namespace Shaker
                     do
                     {
                         Console.WriteLine("Внимание: файла не существует! Желаете создать новый файл с данным именем?");
-                        Console.WriteLine("1 - Да.");
-                        Console.WriteLine("2 - Нет.");
+                        Console.WriteLine("[1] - Да.");
+                        Console.WriteLine("[2] - Нет.");
                         userInput = Utils.GetNumber();
 
                         switch (userInput)
