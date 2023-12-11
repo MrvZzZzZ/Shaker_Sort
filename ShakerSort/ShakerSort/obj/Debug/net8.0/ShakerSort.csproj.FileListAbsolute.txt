@@ -1,0 +1,14 @@
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\bin\Debug\net8.0\ShakerSort.exe
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\bin\Debug\net8.0\ShakerSort.deps.json
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\bin\Debug\net8.0\ShakerSort.runtimeconfig.json
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\bin\Debug\net8.0\ShakerSort.dll
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\bin\Debug\net8.0\ShakerSort.pdb
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.AssemblyInfoInputs.cache
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.AssemblyInfo.cs
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.csproj.CoreCompileInputs.cache
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.dll
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\refint\ShakerSort.dll
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.pdb
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ShakerSort.genruntimeconfig.cache
+C:\Users\Михаил\source\repos\ShakerSort\ShakerSort\obj\Debug\net8.0\ref\ShakerSort.dll
