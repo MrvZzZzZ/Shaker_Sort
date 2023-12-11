@@ -11,7 +11,7 @@
             Console.WriteLine("Введите путь файла: ");
             string filePath = Console.ReadLine() ?? "";
 
-            if (new Utils().CheckFileName(filePath) == false)
+            if (new Utils().CheckFileName(filePath))
             {
                 Console.WriteLine($"Ошибка: неверный формат ввода - {filePath}");
             }

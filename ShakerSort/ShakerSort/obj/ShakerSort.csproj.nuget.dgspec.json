@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Михаил\\source\\repos\\ShakerSort\\ShakerSort\\ShakerSort.csproj": {}
+    "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Михаил\\source\\repos\\ShakerSort\\ShakerSort\\ShakerSort.csproj": {
+    "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Михаил\\source\\repos\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
+        "projectUniqueName": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
         "projectName": "ShakerSort",
-        "projectPath": "C:\\Users\\Михаил\\source\\repos\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
+        "projectPath": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
         "packagesPath": "C:\\Users\\Михаил\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Михаил\\source\\repos\\ShakerSort\\ShakerSort\\obj\\",
+        "outputPath": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Михаил\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -25,7 +25,7 @@
                 Console.Write($"\nДля сохранения введите путь файла: ");
                 fileName = Console.ReadLine() ?? "";
 
-                if (new Utils().CheckFileName(fileName) == false)
+                if (new Utils().CheckFileName(fileName))
                 {
                     Console.WriteLine($"Ошибка: неверный формат ввода - {fileName}");
                 }
