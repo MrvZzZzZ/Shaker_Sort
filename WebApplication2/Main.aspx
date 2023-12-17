@@ -40,7 +40,7 @@
                 case 'Random':
                     content.innerHTML = "Содержимое для опции 2";
                     break;
-                case 'FromBD':
+                case 'FromDB':
                     content.innerHTML = "Содержимое для опции 3";
                     break;
                 case 'FromFile':
