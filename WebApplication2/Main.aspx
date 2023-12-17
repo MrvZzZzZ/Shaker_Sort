@@ -9,7 +9,6 @@
     <script src="C:\Users\Антон\Desktop\WebApplication2\ShakerSort.dll" type="text/csharp"></script>
         <script>
 
-
         function validateInput(textareaValue) {
             var numbers = textareaValue.split(" ");
 
@@ -44,7 +43,8 @@
                     content.innerHTML = "Содержимое для опции 3";
                     break;
                 case 'FromFile':
-                    content.innerHTML = "Содержимое для опции 4";
+                    content.innerHTML = '<input type="file" id="inputFile" accept=".txt">';
+                    content.innerHTML += '<button onclick="readFile()">Submit</button>';
                     break;
             }
         }
@@ -52,20 +52,44 @@
         function getManualInput() {
             var manualInputValue = document.getElementById("manualInput").value;
             if (validateInput(manualInputValue)) {
-                var myList = [];
-                for (var i = 0; i < manualInputValue.length; i++) {
-                    var number = parseFloat(numberList[i]);
-                    myList.push(number);
-                }
-                console.log(myList);
-                var result = eval("ShakerSort.RunShakerSort(mylist);");
-                var sortingNumbers;
-                for (var i = 0; i < myList.length; i++) {
-                    sortingNumbers += myList[i] + " ";
-                }
+                //var myList = [];
+                //for (var i = 0; i < manualInputValue.length; i++) {
+                //    var number = parseFloat(numberList[i]);
+                //    myList.push(number);
+                //}
+                //console.log(myList);
+                //var result = eval("ShakerSort.RunShakerSort(mylist);");
+                //var sortingNumbers;
+                //for (var i = 0; i < myList.length; i++) {
+                //    sortingNumbers += myList[i] + " ";
+                //}
                 outputArray.value = manualInputValue;
             }          
         }
+
+        function readFile() {
+            var output;
+            var fileInput = document.getElementById("inputFile");
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                var numbers = contents.split(" ");
+
+                for (var i = 0; i < numbers.length; i++) {
+                    numbers[i] = parseInt(numbers[i]);
+                }
+
+                output = numbers.join(" ");
+
+                if (validateInput(output)) {
+                    outputArray.value = output;
+                }
+            }
+            reader.readAsText(file);
+        }
+
         </script>
 
 </head>
