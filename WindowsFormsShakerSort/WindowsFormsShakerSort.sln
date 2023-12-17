@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsShakerSort", "WindowsFormsShakerSort.csproj", "{94B63D64-2C91-480D-A0BF-C9E9D757CEF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94B63D64-2C91-480D-A0BF-C9E9D757CEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B63D64-2C91-480D-A0BF-C9E9D757CEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B63D64-2C91-480D-A0BF-C9E9D757CEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B63D64-2C91-480D-A0BF-C9E9D757CEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A1DB03E-5AE2-4D3A-8C06-AC276D9FD278}
+	EndGlobalSection
+EndGlobal
