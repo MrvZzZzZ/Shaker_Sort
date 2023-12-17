@@ -8,46 +8,62 @@
     <title></title>
     <script src="C:\Users\Антон\Desktop\WebApplication2\ShakerSort.dll" type="text/csharp"></script>
         <script>
+<<<<<<< Updated upstream
         
         function validateInput(textareaValue) {
+=======
+
+
+            function validateInput(textareaValue)
+            {
+>>>>>>> Stashed changes
             var numbers = textareaValue.split(" ");
 
-            for (var i = 0; i < numbers.length; i++) {
-                if (isNaN(numbers[i])) {
-                    window.alert("Пожалуйста, введите только целые числа через пробел.");
-                    return false;
+                for (var i = 0; i < numbers.length; i++)
+                {
+                    if (isNaN(numbers[i]))
+                    {
+                        window.alert("Пожалуйста, введите только целые числа через пробел.");
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            function handleChange()
+            {
+                var selectValue = document.getElementById("UserSelect").value;
+                var content = document.getElementById("content");
+
+                switch (selectValue){
+                    case 'Default':
+                        content.innerHTML = '';
+                        break;
+                    case 'Manual':
+                        content.innerHTML = '<form onsubmit="return validateInput()">'
+                        content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите элементы массива через пробел"></textarea><br>';
+                        content.innerHTML += '<button onclick="getManualInput()">Submit</button>';
+                        content.innerHTML += '</form>'
+                        break;
+                    case 'Random':
+                        content.innerHTML = "Содержимое для опции 2";
+                        break;
+                    case 'FromDB':
+                        content.innerHTML = "Содержимое для опции 3";
+                        break;
+                    case 'FromFile':
+                        content.innerHTML = "Содержимое для опции 4";
+                        break;
                 }
             }
 
-            return true;
-        }
+            function GetDataFromDataBase()
+            {
 
-        function handleChange() {
-            var selectValue = document.getElementById("UserSelect").value;
-            var content = document.getElementById("content");
-
-            switch (selectValue){
-                case 'Default':
-                    content.innerHTML = '';
-                    break;
-                case 'Manual':
-                    content.innerHTML = '<form onsubmit="return validateInput()">'
-                    content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите элементы массива через пробел"></textarea><br>';
-                    content.innerHTML += '<button onclick="getManualInput()">Submit</button>';
-                    content.innerHTML += '</form>'
-                    break;
-                case 'Random':
-                    content.innerHTML = "Содержимое для опции 2";
-                    break;
-                case 'FromDB':
-                    content.innerHTML = "Содержимое для опции 3";
-                    break;
-                case 'FromFile':
-                    content.innerHTML = "Содержимое для опции 4";
-                    break;
             }
-        }
 
+<<<<<<< Updated upstream
         function getManualInput() {
             var manualInputValue = document.getElementById("manualInput").value;
             if (validateInput(manualInputValue)) {
@@ -74,6 +90,31 @@
             // обработка ошибки при вызове серверной функции
             alert("Ошибка: " + error.get_message());
         }
+=======
+            function getManualInput()
+            {
+                var manualInputValue = document.getElementById("manualInput").value;
+                if (validateInput(manualInputValue)) {
+                    var myList = [];
+                    for (var i = 0; i < manualInputValue.length; i++)
+                    {
+                        var number = parseFloat(numberList[i]);
+                        myList.push(number);
+                    }
+
+                    console.log(myList);
+                    var result = eval("ShakerSort.RunShakerSort(mylist);");
+                    var sortingNumbers;
+
+                    for (var i = 0; i < myList.length; i++)
+                    {
+                        sortingNumbers += myList[i] + " ";
+                    }
+
+                    outputArray.value = manualInputValue;
+                }          
+            }
+>>>>>>> Stashed changes
         </script>
 
 </head>
@@ -123,7 +164,20 @@
             <textarea id="outputArray"  rows="4" cols="50" placeholder="Здесь выведется отсортированный массив" readonly="true"></textarea>
         </p>
     </div>      
-
+     <div>
+            <%
+                foreach (WebApplication2.DataBase numbers in GetNumbers())
+                {
+                    Response.Write(String.Format(@"
+                        <div class='item'>
+                            <h3>{0}</h3>
+                            {1}
+                            <h4>{2:c}</h4>
+                        </div>", 
+                        numbers.Id, numbers.SortStatus, numbers.Numbers));
+                }
+            %>
+        </div>
 </body>
 </html>
 
