@@ -12,6 +12,7 @@ namespace Shaker
         /// Запуск шейкерной сортировки
         /// </summary>
         /// <param name="numbers"></param>
+        [System.Web.Services.WebMethod]
         public static List<int> RunShakerSort(List<int> numbers)
         {
             bool isSwap = false;

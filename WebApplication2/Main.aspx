@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="WebApplication2.Main" %>
+﻿<%@ Page Language="C#"  AutoEventWireup="true" CodeBehind="ShakerSort.cs" Inherits="WebApplication2.Main"  %>
 
 <!DOCTYPE html>
 
@@ -8,8 +8,7 @@
     <title></title>
     <script src="C:\Users\Антон\Desktop\WebApplication2\ShakerSort.dll" type="text/csharp"></script>
         <script>
-
-
+        
         function validateInput(textareaValue) {
             var numbers = textareaValue.split(" ");
 
@@ -56,15 +55,24 @@
                 for (var i = 0; i < manualInputValue.length; i++) {
                     var number = parseFloat(numberList[i]);
                     myList.push(number);
-                }
-                console.log(myList);
-                var result = eval("ShakerSort.RunShakerSort(mylist);");
-                var sortingNumbers;
+                }                
+                var sortingNumbers
+                var result = PageMethods.RunShakerSort(myList, onServerFunctionSuccess, onServerFunctionFailure);
                 for (var i = 0; i < myList.length; i++) {
-                    sortingNumbers += myList[i] + " ";
+                    sortingNumbers += result[i] + " ";
                 }
                 outputArray.value = manualInputValue;
             }          
+        }
+
+        function onServerFunctionSuccess(result) {
+            // обработка успешного вызова серверной функции
+            alert(result);
+        }
+
+        function onServerFunctionFailure(error) {
+            // обработка ошибки при вызове серверной функции
+            alert("Ошибка: " + error.get_message());
         }
         </script>
 
@@ -73,6 +81,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
             <h1>Шейкерная сортировка</h1>
             <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
