@@ -37,7 +37,9 @@
                     content.innerHTML += '</form>'
                     break;
                 case 'Random':
-                    content.innerHTML = "Содержимое для опции 2";
+                    content.innerHTML = '<textarea id="arraySize" rows="4" cols="50" placeholder="Введите нужный размер массива от 1 до 20"></textarea><br>';
+                    content.innerHTML += '<button onclick="getRandomInput()">Submit</button>';
+                    content.innerHTML += '</form>'
                     break;
                 case 'FromDB':
                     content.innerHTML = "Содержимое для опции 3";
@@ -67,7 +69,24 @@
             }          
         }
 
-        function readFile() {
+        function getRandomInput() {
+            var arraySize = document.getElementById("arraySize").value;
+            var numbers = [];
+
+            if (arraySize < 1 || arraySize > 20 || isNaN(arraySize)) {
+                window.alert("Пожалуйста, введите размера массива от 1 до 20");
+                return false;
+            }
+
+            for (var i = 0; i < arraySize; i++) {
+                numbers[i] = -100 + Math.floor(Math.random() * 200);
+            }
+
+            output = numbers.join(" ");
+            outputArray.value = output;
+        }
+
+        function getFileInput() {
             var output;
             var fileInput = document.getElementById("inputFile");
             var file = fileInput.files[0];
