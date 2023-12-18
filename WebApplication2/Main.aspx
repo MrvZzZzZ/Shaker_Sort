@@ -46,7 +46,7 @@
                     break;
                 case 'FromFile':
                     content.innerHTML = '<input type="file" id="inputFile" accept=".txt">';
-                    content.innerHTML += '<button onclick="readFile()">Submit</button>';
+                    content.innerHTML += '<button onclick="getFileInput()">Submit</button>';
                     break;
             }
         }
