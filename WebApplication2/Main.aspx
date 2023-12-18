@@ -8,7 +8,6 @@
     <title></title>
     <script src="C:\Users\Антон\Desktop\WebApplication2\ShakerSort.dll" type="text/csharp"></script>
         <script>
-
         function validateInput(textareaValue) {
             var numbers = textareaValue.split(" ");
 
@@ -124,6 +123,16 @@
                     <option value="FromFile">Загрузить с файла</option>
                 </select>
             </p>
+
+                    <div>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id">
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="SortStatus" HeaderText="Sort Status" SortExpression="SortStatus" />
+                    <asp:BoundField DataField="Numbers" HeaderText="Numbers" SortExpression="Numbers" />
+                </Columns>
+            </asp:GridView>
+            </div>
         </div>
     </form>
 
