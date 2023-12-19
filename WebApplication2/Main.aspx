@@ -127,7 +127,6 @@
                     <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="ID" ReadOnly="True" SortExpression="Id" />
                     <asp:BoundField DataField="SortStatus" HeaderText="Sort Status" SortExpression="SortStatus" />
                     <asp:BoundField DataField="Numbers" HeaderText="Numbers" SortExpression="Numbers" />
                 </Columns>

@@ -18,7 +18,7 @@ namespace WebApplication2
 
             if (!IsPostBack)
             {
-                string query = "SELECT * FROM Numbers"; // Замените на свой запрос
+                string query = "SELECT * FROM Numbers";
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[@"DataBase1"].ConnectionString);
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -27,22 +27,7 @@ namespace WebApplication2
 
                 connection.Open();
 
-                for (int i = 1; i <= 10; i++)
-                {
-                    string numbers = GenerateNumbers();
-                    bool sortStatus = false;
-                    query = "INSERT INTO Numbers (Id, SortStatus, Numbers) VALUES (@Id, @sortStatus, @numbers)";
-
-                    using (command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Id", i);
-                        command.Parameters.AddWithValue("@SortStatus", sortStatus);
-                        command.Parameters.AddWithValue("@Numbers", numbers);
-                        // Добавьте параметры для каждой колонки вашей таблицы
-
-                        command.ExecuteNonQuery();
-                    }
-                }
+                IncreaseDataBase(connection, query);
 
                 adapter.Fill(dataTable);
                 connection.Close();
@@ -51,13 +36,30 @@ namespace WebApplication2
             }
         }
 
+        private void IncreaseDataBase(SqlConnection connection, string query)
+        {
+            for (int i = 1; i <= 2; i++)
+            {
+                string numbers = GenerateNumbers();
+                bool sortStatus = false;
+                query = "INSERT INTO Numbers (SortStatus, Numbers) VALUES (@sortStatus, @numbers)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SortStatus", sortStatus);
+                    command.Parameters.AddWithValue("@Numbers", numbers);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         private string GenerateNumbers()
         {
-            // Здесь генерируйте вашу строку чисел, например:
             Random random = new Random();
             string numbers = "";
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < random.Next(5, 20); i++)
             {
                 numbers += random.Next(-100, 101) + " ";
             }
