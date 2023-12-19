@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\STromb\\.nuget\\packages\\": {}
+    "C:\\Users\\Михаил\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
+      "projectUniqueName": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
       "projectName": "ShakerSort",
-      "projectPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
-      "packagesPath": "C:\\Users\\STromb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\ShakerSort\\ShakerSort\\obj\\",
+      "projectPath": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\ShakerSort.csproj",
+      "packagesPath": "C:\\Users\\Михаил\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Михаил\\Documents\\Shaker_Sort\\ShakerSort\\ShakerSort\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\STromb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Михаил\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -56,7 +56,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
