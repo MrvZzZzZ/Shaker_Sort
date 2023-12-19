@@ -1,5 +1,8 @@
 ﻿namespace Shaker
 {
+    /// <summary>
+    /// Заполнение списка с файла
+    /// </summary>
     internal class FillFromFile
     {
         /// <summary>
