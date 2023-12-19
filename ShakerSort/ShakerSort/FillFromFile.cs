@@ -16,7 +16,7 @@
                 Console.WriteLine($"Ошибка: неверный формат ввода - {filePath}");
             }
 
-            string text = File.ReadAllText($"{filePath}");
+            string text = File.ReadAllText(filePath);
 
             return text.Split(' ').Select(Int32.Parse).ToList();
         }
