@@ -2,6 +2,9 @@
 
 namespace Shaker
 {
+    /// <summary>
+    /// Класс содержащий различные утилиты для получения флагов или корректных значений переменных
+    /// </summary>
     internal class Utils
     {
         private Random _random = new Random();

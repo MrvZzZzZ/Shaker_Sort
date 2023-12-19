@@ -1,5 +1,8 @@
 ﻿namespace Shaker
 {
+    /// <summary>
+    /// Класс с главным меню
+    /// </summary>
     internal class Program
     {
         /// <summary>
@@ -23,13 +26,15 @@
                 {
                     case (int)MenuCommands.RandomFillCommand:
                         FillRandom fillRandom = new FillRandom();
-                        shakerSort = new ShakerSort(numbers = fillRandom.FillArrayRandom());
+                        numbers = fillRandom.FillArrayRandom();
+                        shakerSort = new ShakerSort(numbers);
                         shakerSort.RunShakerSort();
                         break;
 
                     case (int)MenuCommands.FileFillCommand:
                         FillFromFile fillFromFile = new FillFromFile();
-                        shakerSort = new ShakerSort(numbers = fillFromFile.FillArrayFromFile());
+                        numbers = fillFromFile.FillArrayFromFile();
+                        shakerSort = new ShakerSort(numbers);
                         shakerSort.RunShakerSort();
                         break;
 

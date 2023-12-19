@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shaker
+﻿namespace Shaker
 {
+    /// <summary>
+    /// Класс с сортировкой
+    /// </summary>
     internal class ShakerSort
     {
         private List<int> _numbers;

@@ -1,5 +1,8 @@
 ﻿namespace Shaker
 {
+    /// <summary>
+    /// Случайное списка заполнение
+    /// </summary>
     internal class FillRandom
     {
         private List<int> _numbers = new List<int>();

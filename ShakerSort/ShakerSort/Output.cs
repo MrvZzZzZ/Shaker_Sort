@@ -1,5 +1,8 @@
 ﻿namespace Shaker
 {
+    /// <summary>
+    /// Вывод в консоль и сохранение в файл
+    /// </summary>
     internal class Output
     {
         private List<int> _numbers;
