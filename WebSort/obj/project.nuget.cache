@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zH7xgrHjoVAs6FDNukqpZqUcNTUEatvYuVCvo45YSsGA+XflfT1k0Bpa4HG4PgDeHbmhiU3CTmHWN1hTihEggA==",
+  "dgSpecHash": "Ivpt+WdKQl6aJ03FmMcx3f/oUhBWtKRBcO5Orb900VbNDCxsAwdkkj4Bkx/ZeTdkAmqeZ6T2VIZc9mmAVCTsSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Михаил\\source\\repos\\WebSort\\WebSort.csproj",
+  "projectFilePath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
