@@ -6,6 +6,11 @@
 function validateInput(textareaValue) {
     var numbers = textareaValue.split(" ");
 
+    if (numbers.length > 20) {
+        window.alert("Пожалуйста, введите массив длинной меньше 20 чисел");
+        return false;
+    }
+
     for (var i = 0; i < numbers.length; i++) {
         if (isNaN(numbers[i])) {
             window.alert("Пожалуйста, введите только целые числа через пробел.");
@@ -26,7 +31,7 @@ function handleChange() {
             break;
         case 'Manual':
             content.innerHTML = '<form onsubmit="return validateInput()">'
-            content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите элементы массива через пробел"></textarea><br>';
+            content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите не более 20 элементов массива через пробел"></textarea><br>';
             content.innerHTML += '<button onclick="getManualInput()">Submit</button>';
             content.innerHTML += '</form>'
             break;
