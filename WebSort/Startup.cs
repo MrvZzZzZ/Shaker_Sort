@@ -7,6 +7,13 @@ namespace WebSort
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
