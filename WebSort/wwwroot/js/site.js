@@ -6,6 +6,11 @@
 function validateInput(textareaValue) {
     var numbers = textareaValue.split(" ");
 
+    if (numbers.length > 20) {
+        window.alert("Пожалуйста, введите массив длинной меньше 20 чисел");
+        return false;
+    }
+
     for (var i = 0; i < numbers.length; i++) {
         if (isNaN(numbers[i])) {
             window.alert("Пожалуйста, введите только целые числа через пробел.");
@@ -17,7 +22,7 @@ function validateInput(textareaValue) {
 }
 
 function handleChange() {
-    var selectValue = document.getElementById("userSelect").value;
+    var selectValue = document.getElementById("UserSelect").value;
     var content = document.getElementById("content");
 
     switch (selectValue) {
@@ -26,7 +31,7 @@ function handleChange() {
             break;
         case 'Manual':
             content.innerHTML = '<form onsubmit="return validateInput()">'
-            content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите элементы массива через пробел"></textarea><br>';
+            content.innerHTML += '<textarea id="manualInput" rows="4" cols="50" placeholder="Введите не более 20 элементов массива через пробел"></textarea><br>';
             content.innerHTML += '<button onclick="getManualInput()">Submit</button>';
             content.innerHTML += '</form>'
             break;
@@ -42,31 +47,41 @@ function handleChange() {
 }
 
 function userAction() {
-    var userValue = document.getElementById("userSelect1").value;
-    var contentBase = document.getElementById("contentBase");
+    var selectChoise = document.getElementById("UserSelect1").value;
+    var contentBD = document.getElementById("contentBD");
 
-    switch (userValue) {
+    switch (selectChoise) {
         case 'Default':
-            contentBase.innerHTML = 'ГонФладд';
-            window.alert('Пенисы вкусные');
+            contentBD.innerHTML = '1';
             break;
         case 'Add':
-            contentBase.innerHTML = 'ГонФладд';
-            window.alert('Пенисы вкусные');
+            contentBD.innerHTML = '2';
             break;
         case 'Delete':
-            contentBase.innerHTML = 'Удаление';
+            contentBD.innerHTML = '3';
             break;
         case 'Modification':
-            contentBase.innerHTML = "Обновление";
+            contentBD.innerHTML = '4';
             break;
     }
 }
 
 function getManualInput() {
     var manualInputValue = document.getElementById("manualInput").value;
+    var output;
+    var numbersArray;
     if (validateInput(manualInputValue)) {
-        outputArray.value = manualInputValue;
+        numbersArray = manualInputValue.split(" ");
+
+        for (var i = 0; i < numbersArray.length; i++) {
+            numbersArray[i] = parseInt(numbersArray[i]);
+        }
+
+        output = runShakerSort(numbersArray);
+
+        output = output.join(" ");
+
+        outputArray.value = output;
     }
 }
 
@@ -83,6 +98,54 @@ function getRandomInput() {
         numbers[i] = -100 + Math.floor(Math.random() * 200);
     }
 
+    output = runShakerSort(numbers);
+
     output = numbers.join(" ");
+
     outputArray.value = output;
+}
+
+function runShakerSort(numbers) {
+    let isSwap;
+    let rightBoarder = numbers.length - 1;
+    let leftBoarder = 0;
+    var temp;
+
+    do {
+        isSwap = false;
+
+        for (let i = leftBoarder; i < rightBoarder; i++) {
+            if (numbers[i] > numbers[i + 1]) {
+                temp = numbers[i];
+                numbers[i] = numbers[i + 1];
+                numbers[i + 1] = temp;
+                isSwap = true;
+            }
+        }
+
+        rightBoarder--;
+
+        if (!isSwap) {
+            break;
+        }
+
+        isSwap = false;
+
+        for (let i = rightBoarder; i > leftBoarder; i--) {
+            if (numbers[i] < numbers[i - 1]) {
+                temp = numbers[i];
+                numbers[i] = numbers[i - 1];
+                numbers[i - 1] = temp;
+                isSwap = true;
+            }
+        }
+
+        if (!isSwap) {
+            break;
+        }
+
+        leftBoarder++;
+    } while (leftBoarder < rightBoarder);
+
+    return numbers;
 }
