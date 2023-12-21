@@ -3,4 +3,18 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div>
+    <p>
+        Выберите способ заполнения массива:
+        <select id="UserSelect1" name="UserSelect1" onchange="userAction()">
+            <option value="Default">-Способы ввода-</option>
+            <option value="Add">Вручную</option>
+            <option value="Delete">Случайными числами</option>
+            <option value="Modification">Загрузить с базы данных</option>
+        </select>
+    </p>
+
+    <div id="contentBD">
+
+    </div>
+</div>

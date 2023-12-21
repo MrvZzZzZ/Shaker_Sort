@@ -46,10 +46,42 @@ function handleChange() {
     }
 }
 
+function userAction() {
+    var selectChoise = document.getElementById("UserSelect1").value;
+    var contentBD = document.getElementById("contentBD");
+
+    switch (selectChoise) {
+        case 'Default':
+            contentBD.innerHTML = '1';
+            break;
+        case 'Add':
+            contentBD.innerHTML = '2';
+            break;
+        case 'Delete':
+            contentBD.innerHTML = '3';
+            break;
+        case 'Modification':
+            contentBD.innerHTML = '4';
+            break;
+    }
+}
+
 function getManualInput() {
     var manualInputValue = document.getElementById("manualInput").value;
+    var output;
+    var numbersArray;
     if (validateInput(manualInputValue)) {
-        outputArray.value = manualInputValue;
+        numbersArray = manualInputValue.split(" ");
+
+        for (var i = 0; i < numbersArray.length; i++) {
+            numbersArray[i] = parseInt(numbersArray[i]);
+        }
+
+        output = runShakerSort(numbersArray);
+
+        output = output.join(" ");
+
+        outputArray.value = output;
     }
 }
 
@@ -66,6 +98,54 @@ function getRandomInput() {
         numbers[i] = -100 + Math.floor(Math.random() * 200);
     }
 
+    output = runShakerSort(numbers);
+
     output = numbers.join(" ");
+
     outputArray.value = output;
+}
+
+function runShakerSort(numbers) {
+    let isSwap;
+    let rightBoarder = numbers.length - 1;
+    let leftBoarder = 0;
+    var temp;
+
+    do {
+        isSwap = false;
+
+        for (let i = leftBoarder; i < rightBoarder; i++) {
+            if (numbers[i] > numbers[i + 1]) {
+                temp = numbers[i];
+                numbers[i] = numbers[i + 1];
+                numbers[i + 1] = temp;
+                isSwap = true;
+            }
+        }
+
+        rightBoarder--;
+
+        if (!isSwap) {
+            break;
+        }
+
+        isSwap = false;
+
+        for (let i = rightBoarder; i > leftBoarder; i--) {
+            if (numbers[i] < numbers[i - 1]) {
+                temp = numbers[i];
+                numbers[i] = numbers[i - 1];
+                numbers[i - 1] = temp;
+                isSwap = true;
+            }
+        }
+
+        if (!isSwap) {
+            break;
+        }
+
+        leftBoarder++;
+    } while (leftBoarder < rightBoarder);
+
+    return numbers;
 }
