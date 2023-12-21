@@ -1,6 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "База данных";
 }
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div>
+     @foreach (var item in @Model)
+    {
+        <div>
+            Id: @item.Id
+            SortStatus: @item.SortStatus
+            Numbers: @item.Numbers
+        </div>
+    }
+
+    <p>
+        Выберите нужное действие:
+        <select id="userSelect1" name="userSelect1" onchange="userAction()">
+            <option value="Default">-Способы ввода-</option>
+            <option value="Add">Добавить массив в базу данных</option>
+            <option value="Delete">Удалить массив из базы данных</option>
+            <option value="Modification">Обновить массив</option>
+        </select>
+    </p>
+
+    <div id="contentBase">
+    </div>
+
+</div>

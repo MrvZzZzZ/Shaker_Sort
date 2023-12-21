@@ -17,7 +17,7 @@ function validateInput(textareaValue) {
 }
 
 function handleChange() {
-    var selectValue = document.getElementById("UserSelect").value;
+    var selectValue = document.getElementById("userSelect").value;
     var content = document.getElementById("content");
 
     switch (selectValue) {
@@ -37,6 +37,28 @@ function handleChange() {
             break;
         case 'FromDB':
             content.innerHTML = "Содержимое для опции 3";
+            break;
+    }
+}
+
+function userAction() {
+    var userValue = document.getElementById("userSelect1").value;
+    var contentBase = document.getElementById("contentBase");
+
+    switch (userValue) {
+        case 'Default':
+            contentBase.innerHTML = 'ГонФладд';
+            window.alert('Пенисы вкусные');
+            break;
+        case 'Add':
+            contentBase.innerHTML = 'ГонФладд';
+            window.alert('Пенисы вкусные');
+            break;
+        case 'Delete':
+            contentBase.innerHTML = 'Удаление';
+            break;
+        case 'Modification':
+            contentBase.innerHTML = "Обновление";
             break;
     }
 }

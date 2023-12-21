@@ -32,14 +32,14 @@ namespace WebSort.Controllers
 
         public IActionResult Index()
         {
-            var model = GetNumbers();
-
             return View();
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            var model = GetNumbers();
+
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -56,6 +56,38 @@ namespace WebSort.Controllers
 
                 return result;
             }
+        }
+
+        private void IncreaseDataBase(SqlConnection connection, string query)
+        {
+            for (int i = 1; i <= 2; i++)
+            {
+                string numbers = GenerateNumbers();
+                bool sortStatus = false;
+                query = "INSERT INTO Numbers (SortStatus, Numbers) VALUES (@sortStatus, @numbers)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SortStatus", sortStatus);
+                    command.Parameters.AddWithValue("@Numbers", numbers);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private string GenerateNumbers()
+        {
+            Random random = new Random();
+            string numbers = "";
+
+            for (int i = 0; i < random.Next(5, 20); i++)
+            {
+                numbers += random.Next(-100, 101) + " ";
+            }
+
+            //numbers = numbers.TrimEnd(',');
+            return numbers;
         }
     }
 
