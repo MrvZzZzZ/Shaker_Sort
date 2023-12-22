@@ -66,6 +66,27 @@ function userAction() {
     }
 }
 
+function AddArray() {
+    var newArray = document.getElementById('AddArray').value; // Получаем значение из поля ввода
+    var data = JSON.stringify({ array: newArray }); // Преобразуем его в формат JSON
+    
+    $.ajax({
+        type: 'POST',
+        url: '/HomeController', // Путь к вашему контроллеру и методу
+        data: data,
+        contentType: 'application/json',
+        success: function (response) {
+            // Обработка успешного ответа от сервера
+            console.log(response.message);
+            // Обновление информации на странице, если необходимо
+        },
+        error: function (error) {
+            // Обработка ошибок при отправке данных на сервер
+            console.error('Произошла ошибка при добавлении массива в базу данных: ' + error);
+        }
+    });
+}
+
 function getManualInput() {
     var manualInputValue = document.getElementById("manualInput").value;
     var output;

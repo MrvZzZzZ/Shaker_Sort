@@ -23,9 +23,9 @@
         Эти две идеи приводят к следующим модификациям в методе пузырьковой сортировки. Границы рабочей части массива (то есть части массива, где происходит движение) устанавливаются в месте последнего обмена на каждой итерации. Массив просматривается поочередно справа налево и слева направо.
     </p>
 
-    <h2>
+    <h3>
         Ввод
-    </h2>
+    </h3>
     <p>
         Выберите способ заполнения массива:
         <select id="UserSelect" name="UserSelect" onchange="handleChange()">
@@ -40,11 +40,37 @@
     </div>
 
     <div>
-        <h2>
+        <h3>
             Вывод
-        </h2>
+        </h3>
         <p>
             <textarea id="outputArray" rows="4" cols="50" placeholder="Здесь выведется отсортированный массив" readonly="true"></textarea>
         </p>
     </div>
+</div>
+
+<div class="text-lg-center">
+    <h4 class="display-6">
+        База данных
+    </h4>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th></>
+            <th>Статус</th>
+            <th>Массив</th>
+            <th></th>
+        </tr>
+
+    	@foreach (var item in Model)
+		{
+                
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.SortStatus</td>
+				<td>@item.Numbers</td>
+            </tr>
+        }
+    </table>
 </div>

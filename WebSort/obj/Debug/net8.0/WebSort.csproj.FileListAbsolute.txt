@@ -482,3 +482,12 @@ C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\obj\Debug\net8.0\refint
 C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\obj\Debug\net8.0\WebSort.pdb
 C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\obj\Debug\net8.0\WebSort.genruntimeconfig.cache
 C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\obj\Debug\net8.0\ref\WebSort.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\DevExpress.Data.v23.2.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\Михаил\Documents\SORT\Shaker_Sort\WebSort\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll

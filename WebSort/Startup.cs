@@ -1,23 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Html;
+using Dapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using WebSort.Models;
 
 namespace WebSort
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+		public Startup(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        [Obsolete]
+		[Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
+            string connectionString = "Data Source=DESKTOP-FOCMMOT\\SQLSERVER;Initial Catalog=Arrays;Persist Security Info=True;User ID=sa;Password=sa;Encrypt=False";
+            services.AddTransient<IArrayRepository, ArrayRepository>(provider => new ArrayRepository((connectionString)));
+			services.AddScoped<IArrayRepository, ArrayRepository>();
+			//services.AddControllersWithViews();
+			services.AddControllersWithViews()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
         }
 

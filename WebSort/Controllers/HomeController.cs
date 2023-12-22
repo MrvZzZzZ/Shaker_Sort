@@ -1,100 +1,110 @@
+using Dapper;
+using DevExpress.Data.Browsing;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Protocol.Plugins;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using WebSort.Models;
-using Dapper;
-using System.Configuration;
-using Microsoft.Data.SqlClient;
 
 namespace WebSort.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IConfiguration _configuration;
+	{
+		private readonly ILogger<HomeController> _logger;
+		private readonly IConfiguration _configuration;
+		private readonly IArrayRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
-        {
-            _logger = logger;
-            _configuration = configuration;
-        }
+		public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IArrayRepository repository)
+		{
+			_logger = logger;
+			_configuration = configuration;
+			_repository = repository;
+		}
 
-        public IDbConnection CreateConnection
-        {
-            get
-            {
-                return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-            }
-        }
+		public IDbConnection CreateConnection
+		{
+			get
+			{
+				return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+			}
+		}
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+		public IActionResult Index()
+		{
+			return View(_repository.GetArrays());
+		}
 
-        public IActionResult Privacy()
-        {
-            var model = GetNumbers();
+		public IActionResult Privacy()
+		{
+			return View(_repository.GetArrays());
+		}
 
-            return View(model);
-        }
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+		private List<Array> GetNumbers()
+		{
+			using (IDbConnection db = CreateConnection)
+			{
+				var result = db.Query<Array>("SELECT * FROM Numbers").ToList();
 
-        private List<Array> GetNumbers()
-        {
-            using (IDbConnection db = CreateConnection)
-            {
-                var result = db.Query<Array>("SELECT * FROM Numbers").ToList();
+				return result;
+			}
+		}
 
-                return result;
-            }
-        }
+		public ActionResult Details(int id)
+		{
+			Array user = _repository.Get(id);
+			if (user != null)
+				return View(user);
+			return NotFound();
+		}
 
-        private void IncreaseDataBase(SqlConnection connection, string query)
-        {
-            for (int i = 1; i <= 2; i++)
-            {
-                string numbers = GenerateNumbers();
-                bool sortStatus = false;
-                query = "INSERT INTO Numbers (SortStatus, Numbers) VALUES (@sortStatus, @numbers)";
+		public ActionResult Create()
+		{
+			return View();
+		}
 
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@SortStatus", sortStatus);
-                    command.Parameters.AddWithValue("@Numbers", numbers);
+		[HttpPost]
+		public ActionResult Create(Array user)
+		{
+			_repository.Create(user);
+			return RedirectToAction("Privacy");
+		}
 
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
+		public ActionResult Edit(int id)
+		{
+			Array array = _repository.Get(id);
+			if (array != null)
+				return View(array);
+			return NotFound();
+		}
 
-        private string GenerateNumbers()
-        {
-            Random random = new Random();
-            string numbers = "";
+		[HttpPost]
+		public ActionResult Edit(Array array)
+		{
+			_repository.Update(array);
+			return RedirectToAction("Privacy");
+		}
 
-            for (int i = 0; i < random.Next(5, 20); i++)
-            {
-                numbers += random.Next(-100, 101) + " ";
-            }
-
-            //numbers = numbers.TrimEnd(',');
-            return numbers;
-        }
-    }
-
-    public class Array
-    {
-        public int Id { get; set; }
-        public bool SortStatus { get; set; }
-        public string? Numbers { get; set; }
-    }
+		[HttpGet]
+		[ActionName("Delete")]
+		public ActionResult ConfirmDelete(int id)
+		{
+			Array array = _repository.Get(id);
+			if (array != null)
+				return View(array);
+			return NotFound();
+		}
+		[HttpPost]
+		public ActionResult Delete(int id)
+		{
+			_repository.Delete(id);
+			return RedirectToAction("Privacy");
+		}
+	}
 }

@@ -1,19 +1,32 @@
-﻿@{
-	ViewData["Title"] = "Privacy Policy";
+﻿@model IEnumerable<WebSort.Array>
+@{
+	ViewData["Title"] = "Я ЕГО ВСЕ ЕБАЛ";
 }
 <h1>@ViewData["Title"]</h1>
 
 <div>
-	<p>
-		Выберите способ заполнения массива:
-		<select id="UserSelect1" name="UserSelect1" onchange="userAction()">
-			<option value="Default">-Способы ввода-</option>
-			<option value="Add">Вручную</option>
-			<option value="Delete">Случайными числами</option>
-			<option value="Modification">Загрузить с базы данных</option>
-		</select>
-	</p>
+	<table class="table">
+		<tr>
+			<th>Id</th></>
+			<th>Статус</th>
+			<th>Массив</th>
+			<th></th>
+		</tr>
 
-	<div id="contentBD">
-	</div>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.SortStatus</td>
+				<td>@item.Numbers</td>
+				<td>
+					<a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Изменить</a> 
+					<a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Удалить</a> 
+				</td>
+			</tr>
+		}
+	</table>
+	<p>
+		<a asp-controller="Home" asp-action="Create">Добавить</a>
+	</p>
 </div>
