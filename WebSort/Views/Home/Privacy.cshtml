@@ -19,9 +19,13 @@
 				<td>@item.Id</td>
 				<td>@item.SortStatus</td>
 				<td>@item.Numbers</td>
+
 				<td>
 					<a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Изменить</a> 
-					<a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Удалить</a> 
+					<a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+					<form asp-controller="Home" asp-action="Sort" asp-route-id="@item.Id">
+						<button type="submit" class="btn btn-link">Сортировать</button>
+					</form>
 				</td>
 			</tr>
 		}

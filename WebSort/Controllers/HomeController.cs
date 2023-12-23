@@ -6,6 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Diagnostics;
 using WebSort.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebSort.Controllers
 {
@@ -14,6 +18,7 @@ namespace WebSort.Controllers
 		private readonly ILogger<HomeController> _logger;
 		private readonly IConfiguration _configuration;
 		private readonly IArrayRepository _repository;
+		private Utils utils = new Utils();
 
 		public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IArrayRepository repository)
 		{
@@ -46,21 +51,11 @@ namespace WebSort.Controllers
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
 
-		private List<Array> GetNumbers()
-		{
-			using (IDbConnection db = CreateConnection)
-			{
-				var result = db.Query<Array>("SELECT * FROM Numbers").ToList();
-
-				return result;
-			}
-		}
-
 		public ActionResult Details(int id)
 		{
-			Array user = _repository.Get(id);
-			if (user != null)
-				return View(user);
+			Array array = _repository.Get(id);
+			if (array != null)
+				return View(array);
 			return NotFound();
 		}
 
@@ -70,9 +65,23 @@ namespace WebSort.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Create(Array user)
+		public ActionResult Create(Array array)
 		{
-			_repository.Create(user);
+			if (array.Numbers == null)
+			{
+				return NotFound();
+			}
+
+			if (utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
+			{
+				array.SortStatus = false;
+			}
+			else
+			{
+				array.SortStatus = true;
+            }
+
+            _repository.Create(array);
 			return RedirectToAction("Privacy");
 		}
 
@@ -87,7 +96,16 @@ namespace WebSort.Controllers
 		[HttpPost]
 		public ActionResult Edit(Array array)
 		{
-			_repository.Update(array);
+            if (utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
+            {
+                array.SortStatus = false;
+            }
+            else
+            {
+                array.SortStatus = true;
+            }
+
+            _repository.Update(array);
 			return RedirectToAction("Privacy");
 		}
 
@@ -100,10 +118,18 @@ namespace WebSort.Controllers
 				return View(array);
 			return NotFound();
 		}
+
 		[HttpPost]
 		public ActionResult Delete(int id)
 		{
 			_repository.Delete(id);
+			return RedirectToAction("Privacy");
+		}
+
+		[HttpPost]
+		public ActionResult Sort(int id)
+		{
+			_repository.Sort(id);
 			return RedirectToAction("Privacy");
 		}
 	}
