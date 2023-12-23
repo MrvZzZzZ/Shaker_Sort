@@ -2,7 +2,6 @@
 using Dapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using WebSort.Models;
 
 namespace WebSort
 {

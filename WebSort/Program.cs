@@ -1,4 +1,4 @@
-using WebSort.Models;
+using WebSort;
 
 var builder = WebApplication.CreateBuilder(args);
 

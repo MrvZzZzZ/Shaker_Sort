@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj": {}
+    "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj": {
+    "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj",
+        "projectUniqueName": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj",
         "projectName": "WebSort.tests",
-        "projectPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj",
-        "packagesPath": "C:\\Users\\STromb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort.tests\\obj\\",
+        "projectPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj",
+        "packagesPath": "C:\\Users\\Михаил\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\STromb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Михаил\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +27,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj": {
+                "projectPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -69,6 +73,114 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
+        "projectName": "WebSort",
+        "projectPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
+        "packagesPath": "C:\\Users\\Михаил\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Михаил\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.24, )"
+            },
+            "DevExpress.Data": {
+              "target": "Package",
+              "version": "[23.2.3, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
