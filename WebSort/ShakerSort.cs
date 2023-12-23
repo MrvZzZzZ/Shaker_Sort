@@ -16,7 +16,7 @@
         /// Запуск шейкерной сортировки
         /// </summary>
         /// <param name="numbers">Массив чисел</param>
-        public void RunShakerSort()
+        public List<int> RunShakerSort()
         {
             bool isSwap;
             int rightBoarder = _numbers.Count - 1;
@@ -57,6 +57,8 @@
                 leftBoarder++;
             }
             while (leftBoarder < rightBoarder);
+
+            return _numbers;
         }
     }
 }
