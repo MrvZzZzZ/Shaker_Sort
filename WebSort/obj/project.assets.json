@@ -8138,19 +8138,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Михаил\\.nuget\\packages\\": {}
+    "C:\\Users\\STromb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
+      "projectUniqueName": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort\\WebSort.csproj",
       "projectName": "WebSort",
-      "projectPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
-      "packagesPath": "C:\\Users\\Михаил\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\obj\\",
+      "projectPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort\\WebSort.csproj",
+      "packagesPath": "C:\\Users\\STromb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\STromb\\Documents\\GitHub\\Shaker_Sort\\WebSort\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Михаил\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\STromb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

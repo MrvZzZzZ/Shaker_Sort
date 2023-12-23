@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSort", "WebSort.csproj", "{6FD8E1E9-1CE9-48BF-A368-99BD4883274A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSort", "WebSort.csproj", "{6FD8E1E9-1CE9-48BF-A368-99BD4883274A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSort.tests", "..\WebSort.tests\WebSort.tests.csproj", "{C3F8D701-7460-4BB5-9944-BC1DF82CB3F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6FD8E1E9-1CE9-48BF-A368-99BD4883274A} = {6FD8E1E9-1CE9-48BF-A368-99BD4883274A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{6FD8E1E9-1CE9-48BF-A368-99BD4883274A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FD8E1E9-1CE9-48BF-A368-99BD4883274A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FD8E1E9-1CE9-48BF-A368-99BD4883274A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F8D701-7460-4BB5-9944-BC1DF82CB3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F8D701-7460-4BB5-9944-BC1DF82CB3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F8D701-7460-4BB5-9944-BC1DF82CB3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F8D701-7460-4BB5-9944-BC1DF82CB3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
