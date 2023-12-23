@@ -8,7 +8,6 @@
             {
                 if (numbers[i] > numbers[i + 1])
                 {
-                    Console.WriteLine("Массив не отсортирован!");
                     return false;
                 }
             }

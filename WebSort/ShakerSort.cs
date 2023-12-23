@@ -3,7 +3,7 @@
     /// <summary>
     /// Класс с сортировкой
     /// </summary>
-    internal class ShakerSort
+    public class ShakerSort
     {
         private List<int> _numbers;
 
