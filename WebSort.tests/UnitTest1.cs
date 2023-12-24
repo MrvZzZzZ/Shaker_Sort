@@ -60,7 +60,7 @@ namespace WebSort.tests
         }
 
 		[TestMethod]
-        public void CTestMethodOneThousandItems()
+        public void DTestMethodOneThousandItems()
         {
             List<int> numbers = new List<int>();
             Random random = new Random();
@@ -75,7 +75,7 @@ namespace WebSort.tests
         }
 
 		[TestMethod]
-        public void ETestMethodTenThousandItems()
+        public void GTestMethodTenThousandItems()
         {
             List<int> numbers = new List<int>();
             Random random = new Random();
@@ -103,7 +103,7 @@ namespace WebSort.tests
 		}
 
 		[TestMethod]
-		public void DSortSecondTest()
+		public void ESortSecondTest()
 		{
 			List<Array> arrays = _arrayRepository.GetArrays();
 
@@ -116,7 +116,7 @@ namespace WebSort.tests
 		}
 
 		[TestMethod]
-		public void FSortThirdTest()
+		public void HSortThirdTest()
 		{
 			List<Array> arrays = _arrayRepository.GetArrays();
 
@@ -129,7 +129,27 @@ namespace WebSort.tests
 		}
 
 		[TestMethod]
-		public void GClearDataBase()
+		public void ÑClearDataBase()
+		{
+			using (IDbConnection db = new SqlConnection("Data Source=DESKTOP-FOCMMOT\\SQLSERVER;Initial Catalog=Arrays;Persist Security Info=True;User ID=sa;Password=sa;Encrypt=False"))
+			{
+				var sqlQuery = "DELETE FROM Numbers";
+				db.Execute(sqlQuery);
+			}
+		}
+
+		[TestMethod]
+		public void FClearDataBase()
+		{
+			using (IDbConnection db = new SqlConnection("Data Source=DESKTOP-FOCMMOT\\SQLSERVER;Initial Catalog=Arrays;Persist Security Info=True;User ID=sa;Password=sa;Encrypt=False"))
+			{
+				var sqlQuery = "DELETE FROM Numbers";
+				db.Execute(sqlQuery);
+			}
+		}
+
+		[TestMethod]
+		public void IClearDataBase()
 		{
 			using (IDbConnection db = new SqlConnection("Data Source=DESKTOP-FOCMMOT\\SQLSERVER;Initial Catalog=Arrays;Persist Security Info=True;User ID=sa;Password=sa;Encrypt=False"))
 			{
