@@ -19,5 +19,17 @@
 		{
 			return string.Join(" ", numbers);
 		}
-	}
+
+        public bool ContainsLetters(string input)
+        {
+            foreach (char c in input)
+            {
+                if (char.IsLetter(c))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 }

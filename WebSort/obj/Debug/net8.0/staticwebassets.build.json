@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "klyQ10oTGBtOu6gD2ohzDtU0SKRbnBJjIsFp7p09LJU=",
+  "Hash": "zNNGEUA2/1AsRZ7EAAV2BaGySwpvtZU8WPHnYTBk/qg=",
   "Source": "WebSort",
   "BasePath": "_content/WebSort",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\wwwroot\\js\\func.js",
       "SourceId": "WebSort",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\wwwroot\\",
       "BasePath": "_content/WebSort",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/func.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\func.js"
     },
     {
       "Identity": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

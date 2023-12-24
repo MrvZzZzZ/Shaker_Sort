@@ -1,5 +1,8 @@
 ﻿namespace WebSort
 {
+	/// <summary>
+	/// Экземпляр поля базы данных
+	/// </summary>
 	public class Array
 	{
 		public int Id { get; set; }

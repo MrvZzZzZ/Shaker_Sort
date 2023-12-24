@@ -18,21 +18,13 @@ namespace WebSort.Controllers
 		private readonly ILogger<HomeController> _logger;
 		private readonly IConfiguration _configuration;
 		private readonly IArrayRepository _repository;
-		private Utils utils = new Utils();
+		private readonly Utils _utils = new Utils();
 
 		public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IArrayRepository repository)
 		{
 			_logger = logger;
 			_configuration = configuration;
 			_repository = repository;
-		}
-
-		public IDbConnection CreateConnection
-		{
-			get
-			{
-				return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-			}
 		}
 
 		public IActionResult Index()
@@ -67,12 +59,17 @@ namespace WebSort.Controllers
 		[HttpPost]
 		public ActionResult Create(Array array)
 		{
-			if (array.Numbers == null)
+            while (String.IsNullOrEmpty(array.Numbers))
+            {
+				return View();
+            }
+
+			if (_utils.ContainsLetters(array.Numbers))
 			{
-				return NotFound();
+				return View();
 			}
 
-			if (utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
+            if (_utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
 			{
 				array.SortStatus = false;
 			}
@@ -96,7 +93,7 @@ namespace WebSort.Controllers
 		[HttpPost]
 		public ActionResult Edit(Array array)
 		{
-            if (utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
+            if (_utils.IsSorted(array.Numbers.Split(' ').Select(Int32.Parse).ToList()) == false)
             {
                 array.SortStatus = false;
             }
@@ -131,6 +128,14 @@ namespace WebSort.Controllers
 		{
 			_repository.Sort(id);
 			return RedirectToAction("Privacy");
+		}
+
+		public IDbConnection CreateConnection
+		{
+			get
+			{
+				return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+			}
 		}
 	}
 }

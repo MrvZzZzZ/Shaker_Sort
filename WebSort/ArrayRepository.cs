@@ -5,9 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Shaker;
 using WebSort.Controllers;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WebSort
 {
+    /// <summary>
+    /// Интерфейс взаимодействия 
+    /// </summary>
     public interface IArrayRepository
     {
         void Create(Array array);
@@ -17,6 +21,10 @@ namespace WebSort
         void Update(Array array);
         void Sort(int id);
     }
+
+    /// <summary>
+    /// Методы взаимодействия с базой данных с помощью запросов
+    /// </summary>
     public class ArrayRepository : IArrayRepository
     {
         private string? _connectionString = null;
@@ -26,6 +34,10 @@ namespace WebSort
             _connectionString = connection;
         }
 
+        /// <summary>
+        /// Добавление поля в базу
+        /// </summary>
+        /// <param name="array">Добавляемый экземпляр</param>
         public void Create(Array array)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -34,7 +46,11 @@ namespace WebSort
                 db.Execute(sqlQuery, array);
             }
         }
-
+        
+        /// <summary>
+        /// Удаление поля из базы
+        /// </summary>
+        /// <param name="id">id удаляемого поля</param>
         public void Delete(int id)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -44,6 +60,11 @@ namespace WebSort
             }
         }
 
+        /// <summary>
+        /// Получение поля по id
+        /// </summary>
+        /// <param name="id">id поля</param>
+        /// <returns>Экземпляр найденный по id</returns>
         public Array Get(int id)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -52,6 +73,10 @@ namespace WebSort
             }
         }
 
+        /// <summary>
+        /// Получение Списка всех полей базы
+        /// </summary>
+        /// <returns>Список полей</returns>
         public List<Array> GetArrays()
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -62,6 +87,10 @@ namespace WebSort
             }
         }
 
+        /// <summary>
+        /// Сортировка выбранного массива
+        /// </summary>
+        /// <param name="id">id поля</param>
         public void Sort(int id)
         {
             ShakerSort shakerSort;
@@ -78,6 +107,10 @@ namespace WebSort
             }
         }
 
+        /// <summary>
+        /// Изменение поля в базе
+        /// </summary>
+        /// <param name="array">Изменяемый экземпляр</param>
         public void Update(Array array)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
