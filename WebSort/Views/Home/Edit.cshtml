@@ -9,10 +9,10 @@
         <input type="hidden" asp-for="Id" />
         <div class="form-group">
             <label asp-for="Numbers"></label>
-            <input asp-for="Numbers" class="form-control" />
+            <input id="numbersInput" asp-for="Numbers" class="form-control" />
         </div>
         <div class="form-group">
-            <input onclick="SuccessEdit()" type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+            <input onclick="showNotification()" type="submit" value="Сохранить" class="btn btn-outline-secondary" />
         </div>
     </div>
 </form>

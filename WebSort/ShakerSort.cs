@@ -6,7 +6,7 @@
     public class ShakerSort
     {
         private List<int> _numbers;
-        
+
         public ShakerSort(List<int> numbers)
         {
             _numbers = numbers;

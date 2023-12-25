@@ -15,10 +15,10 @@
             return true;
         }
 
-		public string ConvertIntListToString(List<int> numbers)
-		{
-			return string.Join(" ", numbers);
-		}
+        public string ConvertIntListToString(List<int> numbers)
+        {
+            return string.Join(" ", numbers);
+        }
 
         public bool ContainsLetters(string input)
         {

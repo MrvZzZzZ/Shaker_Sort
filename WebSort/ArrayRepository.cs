@@ -1,11 +1,8 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
-using System.Data;
-using System.Collections.Generic;
-using System.Linq;
 using Shaker;
+using System.Data;
 using WebSort.Controllers;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WebSort
 {
@@ -46,7 +43,7 @@ namespace WebSort
                 db.Execute(sqlQuery, array);
             }
         }
-        
+
         /// <summary>
         /// Удаление поля из базы
         /// </summary>
