@@ -1,5 +1,8 @@
 ﻿function showNotification() {
-    content = document.getElementById("content");
-    content.innerHTML = '<div id="notification" class="alert alert-danger" role="alert">Это уведомление об опасности — check it out!</div > ';
-
+    var numbers = document.getElementById("numbersInput").value;
+    var pattern = /^(\d+\s+)*\d+$/;
+    if (pattern.test(numbers)) {
+    } else {
+        window.alert("Ошибка: строка содержит буквы, символы или двойной пробел.");
+    }
 }

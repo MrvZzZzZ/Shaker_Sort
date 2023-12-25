@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "10VHwkBaiE3RELuqWdBEsGmG05KA6wxErFmZOTH0HGM5P3NDJQhOW8MgWFx0CgCcBCVF5srk+BxvhpvZX2OCzg==",
+  "dgSpecHash": "7qH3SpjGICY0Sl3G5NIJDtLhvCOrnqt70xxHAoStAlnWBE1w4wCzNYtufkyXiD+jCHaFGt5g/Wic1RX/ckOx2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort\\WebSort.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Михаил\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\devexpress.data\\23.2.3\\devexpress.data.23.2.3.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\extended.wpf.toolkit\\4.5.1\\extended.wpf.toolkit.4.5.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

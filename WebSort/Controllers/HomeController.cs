@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.IdentityModel.Tokens;
+using Xceed.Wpf.Toolkit;
 
 namespace WebSort.Controllers
 {
@@ -61,6 +62,7 @@ namespace WebSort.Controllers
 		{
             while (String.IsNullOrEmpty(array.Numbers))
             {
+				MessageBox .Show()
 				return View();
             }
 

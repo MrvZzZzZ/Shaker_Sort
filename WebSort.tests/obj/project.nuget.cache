@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gkhkAsdFf1mq2xPf6ifFK7gpBlAOPKeGDq8VFRxmLe/2eD6ojm3WaChODiK+ZIjqNyWKIFN8O24NFJ1tl9tTog==",
+  "dgSpecHash": "dJnWJ3gXuioBqeRTnGSbHUBEqfrp4MIINOn2PRnsfUyF5oXrb8r11+WjabL2gmMtelIUv3H1V1ZjPJAom4BOvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Михаил\\Documents\\SORT\\Shaker_Sort\\WebSort.tests\\WebSort.tests.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Михаил\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\devexpress.data\\23.2.3\\devexpress.data.23.2.3.nupkg.sha512",
+    "C:\\Users\\Михаил\\.nuget\\packages\\extended.wpf.toolkit\\4.5.1\\extended.wpf.toolkit.4.5.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Михаил\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
