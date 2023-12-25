@@ -62,7 +62,6 @@ namespace WebSort.Controllers
 		{
             while (String.IsNullOrEmpty(array.Numbers))
             {
-				MessageBox .Show()
 				return View();
             }
 
