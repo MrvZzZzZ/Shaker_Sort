@@ -12,31 +12,48 @@ namespace WebSort.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _configuration;
         private readonly IArrayRepository _repository;
-        private readonly Utils _utils = new Utils();
+        private readonly Utils _utils;
 
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IArrayRepository repository)
         {
             _logger = logger;
             _configuration = configuration;
             _repository = repository;
+            _utils = new Utils();
         }
-
+        /// <summary>
+        /// ¬озвращает представление с данными из репозитори€
+        /// </summary>
+        /// <returns>ћассивы</returns>
         public IActionResult Index()
         {
             return View(_repository.GetArrays());
         }
 
+        /// <summary>
+        /// ¬озвращает представление с данными из репозитори€
+        /// </summary>
+        /// <returns>ћассивы</returns>
         public IActionResult Privacy()
         {
             return View(_repository.GetArrays());
         }
 
+        /// <summary>
+        /// ¬озвращает представление с данными из модели ошибки в случае возникновени€ ошибки
+        /// </summary>
+        /// <returns>модели ошибки</returns>
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        /// <summary>
+        /// принимает идентификатор, получает массив по идентификатору и возвращает соответствующее представление
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ѕредставление в зависимости от содержани€ массива</returns>
         public ActionResult Details(int id)
         {
             Array array = _repository.Get(id);
@@ -45,11 +62,20 @@ namespace WebSort.Controllers
             return NotFound();
         }
 
+        /// <summary>
+        /// возвращает представление дл€ создани€ нового массива
+        /// </summary>
+        /// <returns>представление</returns>
         public ActionResult Create()
         {
             return View();
         }
 
+        /// <summary>
+        /// пытаетс€ создать новый массив, дополнительно провер€€ ввод пользовател€.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns>ѕредставление</returns>
         [HttpPost]
         public ActionResult Create(Array array)
         {
@@ -76,6 +102,11 @@ namespace WebSort.Controllers
             return RedirectToAction("Privacy");
         }
 
+        /// <summary>
+        /// принимает идентификатор, получает массив по идентификатору и возвращает соответствующее представление 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ѕредставление</returns>
         public ActionResult Edit(int id)
         {
             Array array = _repository.Get(id);
@@ -84,6 +115,11 @@ namespace WebSort.Controllers
             return NotFound();
         }
 
+        /// <summary>
+        /// пытаетс€ обновить массив, дополнительно провер€€ ввод пользовател€
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns>ѕредставлние</returns>
         [HttpPost]
         public ActionResult Edit(Array array)
         {
@@ -110,6 +146,11 @@ namespace WebSort.Controllers
             return RedirectToAction("Privacy");
         }
 
+        /// <summary>
+        /// возвращает представление дл€ подтверждени€ удалени€ массива
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ѕредставление</returns>
         [HttpGet]
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(int id)
@@ -120,6 +161,11 @@ namespace WebSort.Controllers
             return NotFound();
         }
 
+        /// <summary>
+        /// удал€ет массив по указанному идентификатору
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ѕредставление</returns>
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -127,6 +173,11 @@ namespace WebSort.Controllers
             return RedirectToAction("Privacy");
         }
 
+        /// <summary>
+        /// сортирует массив по указанному идентификатору
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>ѕредставлние</returns>
         [HttpPost]
         public ActionResult Sort(int id)
         {
@@ -134,6 +185,9 @@ namespace WebSort.Controllers
             return RedirectToAction("Privacy");
         }
 
+        /// <summary>
+        /// получение объекта подключени€ к базе данных с помощью строки подключени€ из конфигурации
+        /// </summary>
         public IDbConnection CreateConnection
         {
             get

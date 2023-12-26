@@ -12,10 +12,10 @@
             _numbers = numbers;
         }
 
-        /// <summary>
-        /// Запуск шейкерной сортировки
-        /// </summary>
-        /// <param name="numbers">Массив чисел</param>
+/// <summary>
+/// 
+/// </summary>
+/// <returns></returns>
         public List<int> RunShakerSort()
         {
             bool isSwap;

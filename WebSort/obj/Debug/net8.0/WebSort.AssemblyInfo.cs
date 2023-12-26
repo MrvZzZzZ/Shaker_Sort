@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebSort")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d830cb01837f6ab49b84a50ee9d4fc16b81d172")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8cbf82cbe73b0f5ce4a9e47bf028d32c2a67a34")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebSort")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebSort")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
