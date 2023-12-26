@@ -1,6 +1,7 @@
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Shaker;
+using System;
 using System.Data;
 using WebSort.Controllers;
 
@@ -13,6 +14,8 @@ namespace WebSort.tests
         private Utils _utils = new Utils();
         private ArrayRepository _arrayRepository = new ArrayRepository("Data Source=DESKTOP-FOCMMOT\\SQLSERVER;Initial Catalog=Arrays;Persist Security Info=True;User ID=sa;Password=sa;Encrypt=False");
         private Array _array = new Array();
+        private Random _random = new Random();
+
 
         /// <summary>
         /// 
@@ -34,12 +37,7 @@ namespace WebSort.tests
             _arrayRepository.Create(_array);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="count"></param>
-        /// <returns></returns>
-        static List<int> GenerateRandomNumbers(int count)
+        public List<int> GenerateRandomNumbers(int count)
         {
             Random random = new Random();
             List<int> numbers = new List<int>();
@@ -52,49 +50,37 @@ namespace WebSort.tests
             return numbers;
         }
 
-        [TestMethod]
-        public void ATestMethodOneHoundredItems()
+        public void GenerateArraysForTests(int count)
         {
             List<int> numbers = new List<int>();
-            Random random = new Random();
-            int size;
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < count; i++)
             {
-                size = random.Next(5, 10);
+                int size = _random.Next(5, 10);
                 numbers = GenerateRandomNumbers(size);
                 SendArrays(numbers);
             }
+        }
+
+        [TestMethod]
+        public void ATestMethodOneHoundredItems()
+        {
+            int count = 100;
+            GenerateArraysForTests(count);
         }
 
         [TestMethod]
         public void DTestMethodOneThousandItems()
         {
-            List<int> numbers = new List<int>();
-            Random random = new Random();
-            int size;
-
-            for (int i = 0; i < 1000; i++)
-            {
-                size = random.Next(5, 10);
-                numbers = GenerateRandomNumbers(size);
-                SendArrays(numbers);
-            }
+            int count = 1000;
+            GenerateArraysForTests(count);
         }
 
         [TestMethod]
         public void GTestMethodTenThousandItems()
         {
-            List<int> numbers = new List<int>();
-            Random random = new Random();
-            int size;
-
-            for (int i = 0; i < 10000; i++)
-            {
-                size = random.Next(5, 10);
-                numbers = GenerateRandomNumbers(size);
-                SendArrays(numbers);
-            }
+            int count = 10000;
+            GenerateArraysForTests(count);
         }
 
         [TestMethod]

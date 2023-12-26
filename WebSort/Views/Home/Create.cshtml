@@ -9,9 +9,10 @@
 <form asp-action="Create" asp-controller="Home">
     <div>
         <div class="form-group">
-            <label asp-for="Numbers"></label>
+            <label asp-for="Numbers">Массив (впишите элементы массива через пробел)</label>
             <input id="numbersInput"  asp-for="Numbers" class="form-control  form-control-sm" />
         </div>
+        <br>
         <div class="form-group">
             <input type="submit" value="Сохранить" onclick="showNotification()" class="btn btn-outline-secondary" />
         </div>
